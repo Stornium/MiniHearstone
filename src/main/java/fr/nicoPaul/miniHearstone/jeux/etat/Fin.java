@@ -29,7 +29,7 @@ public class Fin implements Etat {
     @Override
     public void tour() {
         System.out.println("----------- FIN -----------");
-        System.out.println("victoire de: "+plateau.getWin().getMana());
+        System.out.println("victoire de: "+plateau.getWin().getNom());
         System.exit(0);
     }
 }
