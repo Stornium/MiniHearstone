@@ -73,7 +73,7 @@ public abstract class AServiteur extends ACarte {
 
     @Override
     public void use(Plateau plateau) {
-        System.out.println("Utilisation de la carte "+nom+". dégât: "+degatsDeBase+boostDegat);
+        System.out.println("Utilisation de la carte "+nom+". degat: "+degatsDeBase+boostDegat);
         List<AServiteur> cartesCible = plateau.getCartesCible();
         List<AServiteur> collect = cartesCible.stream()
                 .filter(aServiteur -> aServiteur.isEffet(Provocation.class))
@@ -85,7 +85,7 @@ public abstract class AServiteur extends ACarte {
         System.out.println(listCartesToString(cartesCible));
         int choix = -1;
         while (choix==-1){
-            choix = Input.getIntInput("choix (nombre superieur pour attaquer le héro)");
+            choix = Input.getIntInput("choix (nombre superieur pour attaquer le hero)");
 
             if (choix < cartesCible.size() && choix >= 0) {
                 boolean dead = cartesCible.get(choix).takeDamage(degatsDeBase+boostDegat);
@@ -96,7 +96,7 @@ public abstract class AServiteur extends ACarte {
                 plateau.getHeroCible().takeDamege(degatsDeBase+boostDegat);
             }else {
                 choix= -1;
-                System.out.println("! il est pas possible d'attaquer un hero si une carte Provocation est présente !");
+                System.out.println("! il est pas possible d'attaquer un hero si une carte Provocation est presente !");
             }
         }
     }

@@ -10,6 +10,6 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 public class YetiNoroit extends AServiteur {
 
     public YetiNoroit() {
-        super("Yéti noroit", 4, 4, 5);
+        super("Yeti noroit", 4, 4, 5);
     }
 }

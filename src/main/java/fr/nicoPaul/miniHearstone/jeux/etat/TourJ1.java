@@ -50,7 +50,7 @@ public class TourJ1 implements Etat {
 
             affiche(curentHero);
 
-            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action spécial (-1 stop)");
+            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action special (-1 stop)");
             String action = Input.getStringInput("");
             if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;
@@ -71,7 +71,7 @@ public class TourJ1 implements Etat {
             }
 
             if (action.equalsIgnoreCase("s") && sup) {
-                System.out.println("! dèjà utiliser !");
+                System.out.println("! deja utiliser !");
             } else if(action.equalsIgnoreCase("s") && !sup){
                 sup = true;
                 plateau.getHeroCurent().specialAction(plateau);
@@ -79,7 +79,7 @@ public class TourJ1 implements Etat {
                 ACarte aCarte = listCartes.get(choix);
                 if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement après m
                     if (plateau.getServiteursJouer().contains(aCarte)) {
-                        System.out.println("! Carte déjà utiliser !");
+                        System.out.println("! Carte deja utiliser !");
                     } else {
                         aCarte.use(plateau);
                         plateau.getServiteursJouer().add((AServiteur) aCarte);
@@ -156,7 +156,7 @@ public class TourJ1 implements Etat {
                     .append(" Mana: ")
                     .append(aCarte.getMana())
                     .append(aCarte instanceof AServiteur ?
-                            " Dégat: " + ((AServiteur) aCarte).getDegats() :
+                            " Degat: " + ((AServiteur) aCarte).getDegats() :
                             " Desc: " + ((ASort) aCarte).getDesc())
                     .append(aCarte instanceof AServiteur ?
                             " Vie: " + ((AServiteur) aCarte).getVie() :
