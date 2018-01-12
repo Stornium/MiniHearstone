@@ -11,7 +11,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
  */
 public class SoldatDuComteDeLor extends AServiteur {
     public SoldatDuComteDeLor() {
-        super("Soldat du comté de l’or", 1, 1, 2);
+        super("Soldat du comte de l’or", 1, 1, 2);
     }
 
     @Override

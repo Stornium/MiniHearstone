@@ -11,7 +11,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 public class Consecration extends ASort {
 
     public Consecration() {
-        super("Consécration", 4, "2 points de dégâts à tous les adversaires.");
+        super("Consécration", 4, "2 points de degats à tous les adversaires.");
     }
 
     @Override
