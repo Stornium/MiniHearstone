@@ -32,7 +32,19 @@ public abstract class ADeck {
         return cartes;
     }
 
-    public abstract void addDeck();
+    public void addDeck(){
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int val = random.nextInt(8);
+            try {
+                ACarte aCarte = cartesPosible.get(val).newInstance();
+                aCarte = aCarte.init();
+                cartes.add(aCarte);
+            } catch (InstantiationException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public List<ACarte> getCartes(int nb){
         ArrayList<ACarte> res = new ArrayList<>();
