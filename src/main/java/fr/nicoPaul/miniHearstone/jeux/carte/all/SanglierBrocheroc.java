@@ -10,6 +10,6 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 public class SanglierBrocheroc extends AServiteur {
 
     public SanglierBrocheroc() {
-        super("Sanglier_brocheroc", 1, 1, 1);
+        super("Sanglier brocheroc", 1, 1, 1);
     }
 }

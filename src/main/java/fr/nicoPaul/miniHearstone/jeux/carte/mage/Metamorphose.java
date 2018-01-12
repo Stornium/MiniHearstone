@@ -20,7 +20,7 @@ public class Metamorphose extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-        System.out.println("choix du serviteur à Metamorphoser (! si nb invalide la carte est perdue !)");
+        System.out.println("choix du serviteur à Métamorphoser (! si nombre invalide la carte est perdu !)");
         List<AServiteur> cartes = plateau.getCartesOfCurentHero();
         StringBuilder builder = new StringBuilder("");
         for (int i = 0; i < cartes.size(); i++) {

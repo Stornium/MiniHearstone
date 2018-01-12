@@ -68,9 +68,9 @@ public class TourJ2 implements Etat {
 
             if (choix < listCartes.size() && choix >= 0) {
                 ACarte aCarte = listCartes.get(choix);
-                if (action.equalsIgnoreCase("a")) {//seul des serviteur passeront car les sorts sont utiliser imediatement apret m
+                if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement apret m
                     if (plateau.getServiteursJouer().contains(aCarte)) {
-                        System.out.println("! Carte déjàt utiliser !");
+                        System.out.println("! Carte déjà utiliser !");
                     } else {
                         aCarte.use(plateau);
                         plateau.getServiteursJouer().add((AServiteur) aCarte);
@@ -84,7 +84,7 @@ public class TourJ2 implements Etat {
                         listCartes.remove(aCarte);
                         System.out.println("carte jouer");
                     } else {
-                        System.out.println("pas asser de mana!");
+                        System.out.println("pas assez de mana!");
                     }
                 }
             } else {
@@ -147,7 +147,7 @@ public class TourJ2 implements Etat {
                     .append(" Mana: ")
                     .append(aCarte.getMana())
                     .append(aCarte instanceof AServiteur ?
-                            " Degat: " + ((AServiteur) aCarte).getDegats() :
+                            " Dégât: " + ((AServiteur) aCarte).getDegats() :
                             " Desc: " + ((ASort) aCarte).getDesc())
                     .append(aCarte instanceof AServiteur ?
                             " Vie: " + ((AServiteur) aCarte).getVie() :

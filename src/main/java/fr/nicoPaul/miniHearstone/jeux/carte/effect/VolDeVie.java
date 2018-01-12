@@ -13,7 +13,7 @@ import fr.nicoPaul.miniHearstone.jeux.hero.AHero;
 public class VolDeVie extends AServiteurDecorator {
 
     public VolDeVie(AServiteur aServiteur) {
-        super("VolDeVie", aServiteur);
+        super("Vol De Vie", aServiteur);
     }
 
     @Override

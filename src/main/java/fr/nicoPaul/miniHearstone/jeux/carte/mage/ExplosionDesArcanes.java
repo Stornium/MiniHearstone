@@ -11,7 +11,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 public class ExplosionDesArcanes extends ASort {
 
     public ExplosionDesArcanes() {
-        super("Explosion des arcanes", 2, "inflige 1 point de d ́egˆats `a tous les serviteurs adverses");
+        super("Explosion des arcanes", 2, "inflige 1 point de dégât à tous les serviteurs adverses");
     }
 
     @Override
