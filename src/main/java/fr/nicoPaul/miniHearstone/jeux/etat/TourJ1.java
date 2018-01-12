@@ -50,7 +50,7 @@ public class TourJ1 implements Etat {
 
             affiche(curentHero);
 
-            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action sṕecial (-1 stop)");
+            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action spécial (-1 stop)");
             String action = Input.getStringInput("");
             if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;
@@ -71,7 +71,7 @@ public class TourJ1 implements Etat {
             }
 
             if (action.equalsIgnoreCase("s") && sup) {
-                System.out.println("! dèjàt utiliser !");
+                System.out.println("! dèjà utiliser !");
             } else if(action.equalsIgnoreCase("s") && !sup){
                 sup = true;
                 plateau.getHeroCurent().specialAction(plateau);
@@ -156,7 +156,7 @@ public class TourJ1 implements Etat {
                     .append(" Mana: ")
                     .append(aCarte.getMana())
                     .append(aCarte instanceof AServiteur ?
-                            " Dégât: " + ((AServiteur) aCarte).getDegats() :
+                            " Dégat: " + ((AServiteur) aCarte).getDegats() :
                             " Desc: " + ((ASort) aCarte).getDesc())
                     .append(aCarte instanceof AServiteur ?
                             " Vie: " + ((AServiteur) aCarte).getVie() :
