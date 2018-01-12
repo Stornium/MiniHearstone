@@ -4,6 +4,8 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.hero.AHero;
 
 /**
+ * la partie est fini
+ *
  * @author nicolas paul
  * @since 1
  * @version 1

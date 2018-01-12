@@ -24,9 +24,4 @@ public abstract class ASort extends ACarte {
     public void place(Plateau plateau) {
         use(plateau);
     }
-//
-//    @Override
-//    public void use(Plateau plateau) {
-//
-//    }
 }

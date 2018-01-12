@@ -4,6 +4,8 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 
 /**
+ * Maitrise du blocage
+ *
  * @author nicolas paul
  * @since 1
  * @version 1

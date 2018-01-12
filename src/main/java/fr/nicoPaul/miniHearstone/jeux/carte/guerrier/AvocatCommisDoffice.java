@@ -5,6 +5,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
 
 /**
+ * Avocat commis d’office
+ *
  * @author nicolas paul
  * @since 1
  * @version 1

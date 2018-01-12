@@ -3,6 +3,7 @@ package fr.nicoPaul.miniHearstone.jeux.carte.deck;
 import fr.nicoPaul.miniHearstone.jeux.hero.EType;
 
 /**
+ * Factory deck
  * @author nicolas paul
  * @version 1
  * @since 1

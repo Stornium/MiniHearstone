@@ -3,6 +3,8 @@ package fr.nicoPaul.miniHearstone.jeux.carte;
 import fr.nicoPaul.miniHearstone.jeux.Plateau;
 
 /**
+ * carte
+ *
  * @author nicolas paul
  * @since 1
  * @version 1
@@ -33,8 +35,16 @@ public abstract class ACarte {
         return mana;
     }
 
+    /**
+     * quand la carte est placer
+     * @param plateau le plateau
+     */
     public abstract void place(Plateau plateau);
-
+    
+    /**
+     * quand la carte est utiliser
+     * @param plateau le plateau
+     */
     public abstract void use(Plateau plateau);
 
 

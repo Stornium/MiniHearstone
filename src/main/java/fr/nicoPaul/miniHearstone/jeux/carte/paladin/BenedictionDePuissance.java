@@ -8,6 +8,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 import java.util.List;
 
 /**
+ * Benediction de puissance
+ *
  * @author nicolas paul
  * @since 1
  * @version 1
@@ -21,7 +23,7 @@ public class BenedictionDePuissance extends ASort {
     @Override
     public void use(Plateau plateau) {
         System.out.println("choix du serviteur à Metamorphoser (! si nombre invalide la carte est perdu !)");
-        List<AServiteur> cartes = plateau.getCartesOfCurentHero();
+        List<AServiteur> cartes = plateau.getCartesOfCurentHero();//get les carte du hero sur le plateau
         StringBuilder builder = new StringBuilder("");
         for (int i = 0; i < cartes.size(); i++) {
             AServiteur AServiteur = cartes.get(i);

@@ -5,6 +5,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.guerrier.MaitriseDuBlocage;
 import fr.nicoPaul.miniHearstone.jeux.carte.guerrier.Tourbillon;
 
 /**
+ * Deck Guerrier
+ *
  * @author nicolas paul
  * @version 1
  * @since 1

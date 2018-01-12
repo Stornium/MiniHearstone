@@ -10,6 +10,8 @@ import fr.nicoPaul.miniHearstone.jeux.hero.Paladin;
 import java.util.Random;
 
 /**
+ * debut de partie
+ *
  * @author nicolas paul
  * @since 1
  * @version 1
@@ -32,8 +34,10 @@ public class InitGame implements Etat {
         return null;
     }
 
+    @Override
     public void tour() {
 
+        //init joueur 1
         System.out.println("nom du joueur 1");
         String nom = Input.getStringInput("");
 
@@ -42,6 +46,8 @@ public class InitGame implements Etat {
         plateau.setJoueur1(hero);
         hero.addObserveur(plateau);
 
+
+        //init joueur 2
         System.out.println("nom du joueur 2");
         nom = Input.getStringInput("");
 
@@ -52,6 +58,8 @@ public class InitGame implements Etat {
 
         AHero joueur1 = plateau.getJoueur1();
         AHero joueur2 = plateau.getJoueur2();
+
+
 
         System.out.println("choix du joueur au hasard pour jouer en premier");
         Random rn = new Random();
@@ -68,6 +76,11 @@ public class InitGame implements Etat {
         plateau.tour();
     }
 
+    /**
+     * le choix du hero a utiliser par le joueur
+     * @param nom nom du joueur
+     * @return le hero choisie
+     */
     private AHero choixHero(String nom){
         boolean run = true;
         AHero hero = null;

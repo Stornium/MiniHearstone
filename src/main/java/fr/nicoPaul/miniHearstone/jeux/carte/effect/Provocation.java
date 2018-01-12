@@ -4,6 +4,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 import fr.nicoPaul.miniHearstone.jeux.carte.AServiteurDecorator;
 
 /**
+ * effet de cart
+ *
  * @author nicolas paul
  * @since 1
  * @version 1

@@ -8,13 +8,20 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * Representation des decks
+ *
  * @author nicolas paul
  * @version 1
  * @since 1
  */
 public abstract class ADeck {
-
+    /**
+     * list des cart posible
+     */
     protected List<Class<? extends ACarte>> cartesPosible;
+    /**
+     * list des cart actuelle du deck
+     */
     protected List<ACarte> cartes;
 
     public ADeck() {
@@ -32,6 +39,9 @@ public abstract class ADeck {
         return cartes;
     }
 
+    /**
+     * ajout de 10 carte dans le deck
+     */
     public void addDeck(){
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
@@ -46,6 +56,12 @@ public abstract class ADeck {
         }
     }
 
+    /**
+     * predre un nombre de cartse du deck
+     * @param nb nombre de cartes voulue
+     *
+     * @return une liste de ACarte
+     */
     public List<ACarte> getCartes(int nb){
         ArrayList<ACarte> res = new ArrayList<>();
         Random random = new Random();
@@ -57,6 +73,11 @@ public abstract class ADeck {
         return res;
     }
 
+    /**
+     * predre une carte du deck
+     *
+     * @return une ACarte
+     */
     public ACarte getCart(){
         ACarte res = null;
 
@@ -67,6 +88,9 @@ public abstract class ADeck {
         return res;
     }
 
+    /**
+     * si le deck a moin de 5 cartes on en recréer 10 autre
+     */
     public void chekDeck(){
         if(cartes.size()<5){
             addDeck();

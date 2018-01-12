@@ -4,6 +4,7 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 
 /**
+ * Chef de raid
  * @author nicolas paul
  * @since 1
  * @version 1
@@ -13,7 +14,7 @@ public class ChefDeRaid extends AServiteur {
     private Plateau plateau;
 
     public ChefDeRaid() {
-        super("\"Chef de raid\"", 3, 2, 2);
+        super("Chef de raid", 3, 2, 2);
     }
 
     @Override

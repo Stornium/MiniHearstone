@@ -5,6 +5,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
 
 /**
+ * Soldat du comte de l’or
  * @author nicolas paul
  * @since 1
  * @version 1

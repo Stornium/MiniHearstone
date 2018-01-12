@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * hero
+ *
  * @author nicolas paul
  * @version 1
  * @since 1
@@ -38,12 +40,25 @@ public abstract class AHero implements Sujet {
         notifierObserveur();
     }
 
+    /**
+     * prendre une carte du deck et la metre dans la main
+     */
     public void deckToMain(){
         main.add(ADeck.getCart());
     }
 
+    /**
+     * l'action special
+     *
+     * @param plateau le plateau
+     */
     public abstract void specialAction(Plateau plateau);
 
+    /**
+     * subir des dommage
+     *
+     * @param nb nombre de dommage
+     */
     public void takeDamege(int nb){
         if(armure >= nb){
             armure-=nb;

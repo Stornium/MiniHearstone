@@ -50,18 +50,35 @@ public class Plateau implements Observer {
         etat.tour();
     }
 
+    /**
+     * ajouter une carte dans la liste des carte non jouable pour ce tour
+     *
+     * @param AServiteur la carte à ajouter
+     */
     public void addCartesAtente(AServiteur AServiteur){
         cartesAtente.add(AServiteur);
     }
 
+    /**
+     *  supprimer une carte dans la liste des carte non jouable pour ce tour
+     *
+     * @param AServiteur la carte à supprimer
+     */
     public void supCartesAtente(AServiteur AServiteur){
         cartesAtente.remove(AServiteur);
     }
 
+    /**
+     * ajouter une carte au plateau
+     * @param AServiteur la catre à ajouter
+     */
     public void addCartes(AServiteur AServiteur){
         cartes.get(etat.getCurentHero()).add(AServiteur);
     }
 
+    /**
+     * copier toute les catre en attente sur le plateau
+     */
     public void addAllCartesAtenteInCartes(){
         cartes.get(etat.getCurentHero()).addAll(cartesAtente);
         cartesAtente.clear();

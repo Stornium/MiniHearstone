@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * Serviteur
+ *
  * @author nicolas paul
  * @version 1
  * @since 1
@@ -41,8 +43,16 @@ public abstract class AServiteur extends ACarte {
         this.vie = vie;
     }
 
+    public void addBoostDegat(int nb){
+        this.boostDegat+=nb;
+    }
+
+    public void supBoostDegat(int nb){
+        this.boostDegat-=nb;
+    }
+
     /**
-     * @return true si le aServiteur est mort
+     * @return true si le Serviteur est mort
      */
     public boolean takeDamage(int damage) {
         vie-=damage;
@@ -58,14 +68,6 @@ public abstract class AServiteur extends ACarte {
 
     }
 
-    public void addBoostDegat(int nb){
-        this.boostDegat+=nb;
-    }
-
-    public void supBoostDegat(int nb){
-        this.boostDegat-=nb;
-    }
-
     @Override
     public void place(Plateau plateau) {
         plateau.addCartesAtente(this);
@@ -79,6 +81,7 @@ public abstract class AServiteur extends ACarte {
                 .filter(aServiteur -> aServiteur.isEffet(Provocation.class))
                 .collect(Collectors.toList());
         boolean empty = collect.isEmpty();
+        //si des carte avec provocation sont presente ceulle ceu ci sont affiché
         if(!empty){
             cartesCible=collect;
         }
@@ -89,10 +92,10 @@ public abstract class AServiteur extends ACarte {
 
             if (choix < cartesCible.size() && choix >= 0) {
                 boolean dead = cartesCible.get(choix).takeDamage(degatsDeBase+boostDegat);
-                if (dead){
+                if (dead){//test si la carte est morte
                     plateau.getCartesCible().remove(choix);
                 }
-            }else if(empty){
+            }else if(empty){// attaque le hero
                 plateau.getHeroCible().takeDamege(degatsDeBase+boostDegat);
             }else {
                 choix= -1;
@@ -101,10 +104,20 @@ public abstract class AServiteur extends ACarte {
         }
     }
 
+    /**
+     * test si la carte dispose de leffet aClass
+     * @param aClass class extend AServiteurDecorator
+     * @return true si this extende de aClass
+     */
     public boolean isEffet(Class<? extends AServiteurDecorator> aClass) {
         return false;
     }
 
+    /**
+     * toString de la list
+     * @param list liste a passer en string
+     * @return le string de la list
+     */
     private String listCartesToString(List<AServiteur> list){
         StringBuilder builder = new StringBuilder("Carte cible : ");
         for (int i = 0; i < list.size(); i++) {

@@ -5,6 +5,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.mage.ImageMiroir;
 import fr.nicoPaul.miniHearstone.jeux.carte.mage.Metamorphose;
 
 /**
+ * Deck Mage
  * @author nicolas paul
  * @version 1
  * @since 1

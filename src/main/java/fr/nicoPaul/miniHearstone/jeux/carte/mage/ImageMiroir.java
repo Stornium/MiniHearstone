@@ -5,6 +5,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
 
 /**
+ * Image miroir
+ *
  * @author nicolas paul
  * @since 1
  * @version 1

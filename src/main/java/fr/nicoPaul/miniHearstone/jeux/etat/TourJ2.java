@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * le toure du joueur 2
+ *
  * @author nicolas paul
  * @version 1
  * @since 1
@@ -34,10 +36,10 @@ public class TourJ2 implements Etat {
     }
 
     public void tour() {
-        boolean sup = false;
+        boolean spe = false;
         AHero curentHero = getCurentHero();
-        curentHero.addMana();
-        curentHero.deckToMain();
+        curentHero.addMana();//+1 de mana
+        curentHero.deckToMain();//prend une carte dans sa main
         System.out.println("------------------------------------------");
         System.out.println("Au tour de " + curentHero.getNom() + "\n");
         System.out.println("Vie: " + curentHero.getVie() +
@@ -65,16 +67,20 @@ public class TourJ2 implements Etat {
 
             List<? extends ACarte> listCartes = new ArrayList<>();
             if (action.equalsIgnoreCase("a")) {
+                //si on ataque le choix se fait selement sur les carte du hero sur le plateau
                 listCartes = plateau.getCartesOfHero(curentHero);
             } else if (action.equalsIgnoreCase("m")) {
+                //si on pose une carte le choix se fait selement dans la main
                 listCartes = curentHero.getMain();
             }
 
-            if (action.equalsIgnoreCase("s") && sup) {
+            if (action.equalsIgnoreCase("s") && spe) {
+                // si special dejat utilisé
                 System.out.println("! deja utiliser !");
-            } else if(action.equalsIgnoreCase("s") && !sup){
+            } else if(action.equalsIgnoreCase("s") && !spe){
                 if (2 <= curentHero.getMana()) {
-                    sup = true;
+                    //si asser de mana
+                    spe = true;
                     getCurentHero().specialAction(plateau);
                     curentHero.supMana(2);
                     System.out.println("action special jouer");
@@ -83,20 +89,21 @@ public class TourJ2 implements Etat {
                 }
             } else if (choix < listCartes.size() && choix >= 0) {
                 ACarte aCarte = listCartes.get(choix);
-                if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement apret m
+                if (action.equalsIgnoreCase("a")) {
                     if (plateau.getServiteursJouer().contains(aCarte)) {
                         System.out.println("! Carte deja utiliser !");
                     } else {
                         aCarte.use(plateau);
                         plateau.getServiteursJouer().add((AServiteur) aCarte);
+                        //seul des serviteurs passeront car les sorts sont utiliser imediatement apret m. donc on peu caster sans problème
                         System.out.println("carte utiliser");
                     }
                 } else if (action.equalsIgnoreCase("m")) {
 
                     if (aCarte.getMana() <= curentHero.getMana()) {
                         aCarte.place(plateau);
-                        curentHero.supMana(aCarte.getMana());
-                        listCartes.remove(aCarte);
+                        curentHero.supMana(aCarte.getMana());//sup du mana
+                        listCartes.remove(aCarte);//sup de la main
                         System.out.println("carte jouer");
                     } else {
                         System.out.println("pas assez de mana!");
@@ -117,6 +124,11 @@ public class TourJ2 implements Etat {
         plateau.tour();
     }
 
+    /**
+     * affichage du plateau et de la main du joueur 1
+     *
+     * @param curentHero hero actuelle
+     */
     private void affiche(AHero curentHero) {
 
         System.out.println("---------------------------- cartes d/v");
