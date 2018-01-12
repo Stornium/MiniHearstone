@@ -73,7 +73,7 @@ public abstract class AServiteur extends ACarte {
 
     @Override
     public void use(Plateau plateau) {
-        System.out.println("Utilisation de la carte "+nom+". degat: "+degatsDeBase+boostDegat);
+        System.out.println("Utilisation de la carte "+nom+". degat: "+(degatsDeBase+boostDegat));
         List<AServiteur> cartesCible = plateau.getCartesCible();
         List<AServiteur> collect = cartesCible.stream()
                 .filter(aServiteur -> aServiteur.isEffet(Provocation.class))

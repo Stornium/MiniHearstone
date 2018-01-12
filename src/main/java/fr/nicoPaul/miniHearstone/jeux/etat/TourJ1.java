@@ -34,6 +34,7 @@ public class TourJ1 implements Etat {
     }
 
     public void tour() {
+        boolean sup = false;
         AHero curentHero = getCurentHero();
         curentHero.addMana();
         curentHero.deckToMain();
@@ -49,15 +50,18 @@ public class TourJ1 implements Etat {
 
             affiche(curentHero);
 
-            System.out.println("choix de l'action: A => utiliser une cart | M => Placer une carte de la main (-1 stop)");
+            System.out.println("choix de l'action: A => utiliser une cart | M => Placer une carte de la main | S => action sṕecial (-1 stop)");
             String action = Input.getStringInput("");
-            if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m"))
+            if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;
 
-            System.out.println("choix de la carte.");
-            int choix = Input.getIntInput("");
-            if (choix == -1)
-                break;
+            int choix =-1;
+            while (true){
+                System.out.println("choix de la carte.");
+                choix = Input.getIntInput("");
+                if (choix != -1)
+                    break;
+            }
 
             List<? extends ACarte> listCartes = new ArrayList<>();
             if (action.equalsIgnoreCase("a")) {
@@ -66,7 +70,12 @@ public class TourJ1 implements Etat {
                 listCartes = curentHero.getMain();
             }
 
-            if (choix < listCartes.size() && choix >= 0) {
+            if (action.equalsIgnoreCase("s") && sup) {
+                System.out.println("! dèjàt utiliser !");
+            } else if(action.equalsIgnoreCase("s") && !sup){
+                sup = true;
+                plateau.getHeroCurent().specialAction(plateau);
+            } else if (choix < listCartes.size() && choix >= 0) {
                 ACarte aCarte = listCartes.get(choix);
                 if (action.equalsIgnoreCase("a")) {//seul des serviteur passeront car les sorts sont utiliser imediatement apret m
                     if (plateau.getServiteursJouer().contains(aCarte)) {

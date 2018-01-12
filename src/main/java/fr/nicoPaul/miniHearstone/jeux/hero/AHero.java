@@ -1,5 +1,6 @@
 package fr.nicoPaul.miniHearstone.jeux.hero;
 
+import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.ACarte;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.ADeck;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.DeckFactory;
@@ -27,7 +28,7 @@ public abstract class AHero {
         this.vie = 30;
         this.armure = 0;
         this.mana = 0;
-        this.ADeck = DeckFactory.factory(type);//TODO Builder
+        this.ADeck = DeckFactory.factory(type);
         this.specialAction = specialAction;
         this.main = new ArrayList<>();
     }
@@ -36,7 +37,7 @@ public abstract class AHero {
         main.add(ADeck.getCart());
     }
 
-    public abstract void specialAction();
+    public abstract void specialAction(Plateau plateau);
 
     public void takeDamege(int nb){
         if(armure >= nb){
