@@ -8,7 +8,7 @@ package fr.nicoPaul.miniHearstone.jeux.hero;
 public class Paladin extends AHero {
 
     public Paladin(String nom) {
-        super(nom, "Renfort");
+        super(nom, "Renfort", EType.PALADIN);
     }
 
     public void specialAction() {

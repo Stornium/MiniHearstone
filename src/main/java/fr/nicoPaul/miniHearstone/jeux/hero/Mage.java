@@ -8,7 +8,7 @@ package fr.nicoPaul.miniHearstone.jeux.hero;
 public class Mage extends AHero {
 
     public Mage(String nom) {
-        super(nom, "Boule de feu");
+        super(nom, "Boule de feu", EType.MAGE);
     }
 
     public void specialAction() {

@@ -8,7 +8,7 @@ package fr.nicoPaul.miniHearstone.jeux.hero;
 public class Guerrier extends AHero {
 
     public Guerrier(String nom) {
-        super(nom, "Armure");
+        super(nom, "Armure", EType.GUERRIER);
     }
 
     public void specialAction() {
