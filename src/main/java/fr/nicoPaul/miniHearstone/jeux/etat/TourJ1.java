@@ -50,7 +50,7 @@ public class TourJ1 implements Etat {
 
             affiche(curentHero);
 
-            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action sṕecial (-1 stop)");
+            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action spécial (-1 stop)");
             String action = Input.getStringInput("");
             if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;

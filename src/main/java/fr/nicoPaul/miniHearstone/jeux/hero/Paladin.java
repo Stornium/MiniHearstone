@@ -13,9 +13,6 @@ public class Paladin extends AHero {
         super(nom, "Renfort", EType.PALADIN);
     }
 
-    public void specialAction() {
-        //todo
-    }
 
     @Override
     public void specialAction(Plateau plateau) {
