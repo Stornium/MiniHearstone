@@ -24,6 +24,7 @@ public class Plateau implements Observer {
 
     private AHero joueur1;
     private AHero joueur2;
+    private AHero win;
 
     private HashMap<AHero, List<AServiteur>> cartes;
     private List<AServiteur> cartesAtente;
@@ -109,6 +110,10 @@ public class Plateau implements Observer {
         return serviteursJouer;
     }
 
+    public AHero getWin() {
+        return win;
+    }
+
     //</editor-fold>
 
     //<editor-fold desc="change etat">
@@ -119,6 +124,7 @@ public class Plateau implements Observer {
     public void changeEtatTourJ2(){
         etat = tourJ2;
     }
+
     public void changeEtatFin(){
         etat = fin;
     }
@@ -127,6 +133,7 @@ public class Plateau implements Observer {
     @Override
     public void actualiser(int vie) {
         if (vie <=0){
+            win = etat.getCurentHero();
             changeEtatFin();
             tour();
         }

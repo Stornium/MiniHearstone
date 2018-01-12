@@ -49,6 +49,7 @@ public abstract class AHero implements Sujet {
             armure-=nb;
         }else{
             nb-=armure;
+            armure=0;
             vie-=nb;
         }
 

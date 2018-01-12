@@ -57,12 +57,12 @@ public class InitGame implements Etat {
         Random rn = new Random();
         int val = rn.nextInt(2) + 1;
         if(val==1){
-            joueur1.addMain(joueur1.getADeck().getCartes(3));
-            joueur2.addMain(joueur2.getADeck().getCartes(4));
+            joueur1.addMain(joueur1.getADeck().getCartes(2));//3-1 car carte tirer au debut de tour
+            joueur2.addMain(joueur2.getADeck().getCartes(3));//4-1 car carte tirer au debut de tour
             plateau.changeEtatTourJ1();
         }else{
-            joueur2.addMain(joueur2.getADeck().getCartes(3));
-            joueur1.addMain(joueur1.getADeck().getCartes(4));
+            joueur2.addMain(joueur2.getADeck().getCartes(2));
+            joueur1.addMain(joueur1.getADeck().getCartes(3));
             plateau.changeEtatTourJ2();
         }
         plateau.tour();
