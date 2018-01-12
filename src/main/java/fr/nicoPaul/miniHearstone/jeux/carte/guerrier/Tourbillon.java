@@ -11,7 +11,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
 public class Tourbillon extends ASort {
 
     public Tourbillon() {
-        super("Tourbillon", 1, "1 points de d́egâts à TOUS les serviteurs");
+        super("Tourbillon", 1, "1 points de d́egats à TOUS les serviteurs");
     }
 
     @Override

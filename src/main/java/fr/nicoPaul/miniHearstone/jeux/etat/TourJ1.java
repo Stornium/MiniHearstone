@@ -71,7 +71,7 @@ public class TourJ1 implements Etat {
             }
 
             if (action.equalsIgnoreCase("s") && sup) {
-                System.out.println("! dèjàt utiliser !");
+                System.out.println("! dèjà utiliser !");
             } else if(action.equalsIgnoreCase("s") && !sup){
                 sup = true;
                 plateau.getHeroCurent().specialAction(plateau);
@@ -156,7 +156,7 @@ public class TourJ1 implements Etat {
                     .append(" Mana: ")
                     .append(aCarte.getMana())
                     .append(aCarte instanceof AServiteur ?
-                            " Dégât: " + ((AServiteur) aCarte).getDegats() :
+                            " Dégat: " + ((AServiteur) aCarte).getDegats() :
                             " Desc: " + ((ASort) aCarte).getDesc())
                     .append(aCarte instanceof AServiteur ?
                             " Vie: " + ((AServiteur) aCarte).getVie() :
