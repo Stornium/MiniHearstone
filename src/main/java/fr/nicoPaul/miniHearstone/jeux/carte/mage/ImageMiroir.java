@@ -2,6 +2,7 @@ package fr.nicoPaul.miniHearstone.jeux.carte.mage;
 
 import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
+import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
 
 /**
  * @author nicolas paul
@@ -16,7 +17,7 @@ public class ImageMiroir extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-        plateau.addCartesAtente(new Serviteurs());
-        plateau.addCartesAtente(new Serviteurs());
+        plateau.addCartesAtente(new Provocation(new Serviteurs()));
+        plateau.addCartesAtente(new Provocation(new Serviteurs()));
     }
 }

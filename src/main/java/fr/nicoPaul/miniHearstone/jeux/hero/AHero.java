@@ -4,6 +4,7 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.ACarte;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.ADeck;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.DeckFactory;
+import fr.nicoPaul.miniHearstone.jeux.observer.Observer;
 import fr.nicoPaul.miniHearstone.jeux.observer.Sujet;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public abstract class AHero implements Sujet {
     private ADeck ADeck;
     private List<ACarte> main;
     private String specialAction;
+    private List<Observer> observers;
 
     public AHero(String nom, String specialAction, EType type) {
         this.nom = nom;
@@ -32,6 +34,8 @@ public abstract class AHero implements Sujet {
         this.ADeck = DeckFactory.factory(type);
         this.specialAction = specialAction;
         this.main = new ArrayList<>();
+        this.observers = new ArrayList<>();
+        notifierObserveur();
     }
 
     public void deckToMain(){
@@ -47,6 +51,8 @@ public abstract class AHero implements Sujet {
             nb-=armure;
             vie-=nb;
         }
+
+        notifierObserveur();
     }
 
     public void addArmure(int nb){
@@ -99,6 +105,8 @@ public abstract class AHero implements Sujet {
 
     public void setVie(int vie) {
         this.vie = vie;
+
+        notifierObserveur();
     }
 
     @Override
@@ -111,5 +119,20 @@ public abstract class AHero implements Sujet {
         sb.append(", ADeck=").append(ADeck);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public void addObserveur(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void supObserveur(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifierObserveur() {
+        observers.forEach(observer -> observer.actualiser(vie));
     }
 }

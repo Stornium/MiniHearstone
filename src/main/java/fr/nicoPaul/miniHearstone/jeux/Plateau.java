@@ -1,11 +1,9 @@
 package fr.nicoPaul.miniHearstone.jeux;
 
 import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
-import fr.nicoPaul.miniHearstone.jeux.etat.Etat;
-import fr.nicoPaul.miniHearstone.jeux.etat.InitGame;
-import fr.nicoPaul.miniHearstone.jeux.etat.TourJ1;
-import fr.nicoPaul.miniHearstone.jeux.etat.TourJ2;
+import fr.nicoPaul.miniHearstone.jeux.etat.*;
 import fr.nicoPaul.miniHearstone.jeux.hero.AHero;
+import fr.nicoPaul.miniHearstone.jeux.observer.Observer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,12 +14,13 @@ import java.util.List;
  * @since 1
  * @version 1
  */
-public class Plateau {
+public class Plateau implements Observer {
 
     private Etat etat;
     private Etat initGame;
     private Etat tourJ1;
     private Etat tourJ2;
+    private Etat fin;
 
     private AHero joueur1;
     private AHero joueur2;
@@ -35,6 +34,7 @@ public class Plateau {
         this.initGame = new InitGame(this);
         this.tourJ1 = new TourJ1(this);
         this.tourJ2 = new TourJ2(this);
+        this.fin = new Fin(this);
         this.etat = this.initGame;
 
         this.cartesAtente = new ArrayList<AServiteur>();
@@ -119,5 +119,16 @@ public class Plateau {
     public void changeEtatTourJ2(){
         etat = tourJ2;
     }
+    public void changeEtatFin(){
+        etat = fin;
+    }
     //</editor-fold>
+
+    @Override
+    public void actualiser(int vie) {
+        if (vie <=0){
+            changeEtatFin();
+            tour();
+        }
+    }
 }

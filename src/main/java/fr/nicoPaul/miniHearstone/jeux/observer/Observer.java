@@ -6,4 +6,5 @@ package fr.nicoPaul.miniHearstone.jeux.observer;
  * @version 1
  */
 public interface Observer {
+    void actualiser(int vie);
 }

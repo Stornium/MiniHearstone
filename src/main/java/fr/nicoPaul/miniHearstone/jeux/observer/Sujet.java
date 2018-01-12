@@ -7,4 +7,7 @@ package fr.nicoPaul.miniHearstone.jeux.observer;
  */
 public interface Sujet {
 
+    void addObserveur(Observer observer);
+    void supObserveur(Observer observer);
+    void notifierObserveur();
 }

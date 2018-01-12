@@ -38,14 +38,17 @@ public class InitGame implements Etat {
         String nom = Input.getStringInput("");
 
         System.out.println("choix du joueur 1");
-        plateau.setJoueur1(choixHero(nom));
-
+        AHero hero = choixHero(nom);
+        plateau.setJoueur1(hero);
+        hero.addObserveur(plateau);
 
         System.out.println("nom du joueur 2");
         nom = Input.getStringInput("");
 
         System.out.println("choix du joueur 2");
-        plateau.setJoueur2(choixHero(nom));
+        hero = choixHero(nom);
+        plateau.setJoueur2(hero);
+        hero.addObserveur(plateau);
 
         AHero joueur1 = plateau.getJoueur1();
         AHero joueur2 = plateau.getJoueur2();

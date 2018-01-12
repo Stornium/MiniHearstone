@@ -56,7 +56,7 @@ public class TourJ1 implements Etat {
                 break;
 
             int choix =-1;
-            while (true){
+            while (!action.equalsIgnoreCase("s")){//Choix de cart que si pas specialle
                 System.out.println("choix de la carte.");
                 choix = Input.getIntInput("");
                 if (choix != -1)
@@ -73,8 +73,14 @@ public class TourJ1 implements Etat {
             if (action.equalsIgnoreCase("s") && sup) {
                 System.out.println("! deja utiliser !");
             } else if(action.equalsIgnoreCase("s") && !sup){
-                sup = true;
-                plateau.getHeroCurent().specialAction(plateau);
+                if (2 <= curentHero.getMana()) {
+                    sup = true;
+                    getCurentHero().specialAction(plateau);
+                    curentHero.supMana(2);
+                    System.out.println("action special jouer");
+                } else {
+                    System.out.println("pas assez de mana!");
+                }
             } else if (choix < listCartes.size() && choix >= 0) {
                 ACarte aCarte = listCartes.get(choix);
                 if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement apret m
