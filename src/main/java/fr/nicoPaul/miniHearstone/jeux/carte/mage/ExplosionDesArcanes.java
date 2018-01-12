@@ -7,8 +7,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
  * Explosion des arcanes
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class ExplosionDesArcanes extends ASort {
 

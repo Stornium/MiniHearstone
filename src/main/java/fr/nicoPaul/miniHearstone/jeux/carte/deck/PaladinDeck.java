@@ -6,6 +6,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.paladin.Consecration;
 
 /**
  * Deck Paladin
+ *
  * @author nicolas paul
  * @version 1
  * @since 1

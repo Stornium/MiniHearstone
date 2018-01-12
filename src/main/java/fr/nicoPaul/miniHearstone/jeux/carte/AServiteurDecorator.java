@@ -4,8 +4,8 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 
 /**
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public abstract class AServiteurDecorator extends AServiteur {
 
@@ -29,6 +29,6 @@ public abstract class AServiteurDecorator extends AServiteur {
 
     @Override
     public String getNom() {
-        return aServiteur.getNom()+":"+nom;
+        return aServiteur.getNom() + ":" + nom;
     }
 }

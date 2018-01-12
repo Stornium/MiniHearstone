@@ -6,6 +6,7 @@ import fr.nicoPaul.miniHearstone.jeux.carte.effect.Charge;
 
 /**
  * Chevaucheur de loup
+ *
  * @author nicolas paul
  * @version 1
  * @since 1

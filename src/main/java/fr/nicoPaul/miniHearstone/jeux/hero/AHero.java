@@ -43,7 +43,7 @@ public abstract class AHero implements Sujet {
     /**
      * prendre une carte du deck et la metre dans la main
      */
-    public void deckToMain(){
+    public void deckToMain() {
         main.add(ADeck.getCart());
     }
 
@@ -59,39 +59,39 @@ public abstract class AHero implements Sujet {
      *
      * @param nb nombre de dommage
      */
-    public void takeDamege(int nb){
-        if(armure >= nb){
-            armure-=nb;
-        }else{
-            nb-=armure;
-            armure=0;
-            vie-=nb;
+    public void takeDamege(int nb) {
+        if (armure >= nb) {
+            armure -= nb;
+        } else {
+            nb -= armure;
+            armure = 0;
+            vie -= nb;
         }
 
         notifierObserveur();
     }
 
-    public void addArmure(int nb){
-        armure+=nb;
+    public void addArmure(int nb) {
+        armure += nb;
     }
 
-    public void supMana(int nb){
-        mana-=nb;
+    public void supMana(int nb) {
+        mana -= nb;
     }
 
     public String getNom() {
         return nom;
     }
 
-    public void addMana(){
-        if(this.mana < 10) this.mana++;
+    public void addMana() {
+        if (this.mana < 10) this.mana++;
     }
 
-    public void addMain(List<ACarte> carte){
+    public void addMain(List<ACarte> carte) {
         this.main.addAll(carte);
     }
 
-    public void dellMain(ACarte carte){
+    public void dellMain(ACarte carte) {
         this.main.remove(carte);
     }
 
@@ -101,6 +101,12 @@ public abstract class AHero implements Sujet {
 
     public int getVie() {
         return vie;
+    }
+
+    public void setVie(int vie) {
+        this.vie = vie;
+
+        notifierObserveur();
     }
 
     public int getArmure() {
@@ -117,12 +123,6 @@ public abstract class AHero implements Sujet {
 
     public String getSpecialAction() {
         return specialAction;
-    }
-
-    public void setVie(int vie) {
-        this.vie = vie;
-
-        notifierObserveur();
     }
 
     @Override

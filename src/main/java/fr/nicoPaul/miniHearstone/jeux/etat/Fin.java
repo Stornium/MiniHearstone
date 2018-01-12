@@ -7,8 +7,8 @@ import fr.nicoPaul.miniHearstone.jeux.hero.AHero;
  * la partie est fini
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class Fin implements Etat {
 
@@ -31,7 +31,7 @@ public class Fin implements Etat {
     @Override
     public void tour() {
         System.out.println("----------- FIN -----------");
-        System.out.println("victoire de: "+plateau.getWin().getNom());
+        System.out.println("victoire de: " + plateau.getWin().getNom());
         System.exit(0);
     }
 }

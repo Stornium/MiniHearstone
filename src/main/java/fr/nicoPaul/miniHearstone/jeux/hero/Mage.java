@@ -36,7 +36,7 @@ public class Mage extends AHero {
         int val = Input.getIntInput("");
         if (val < cartes.size() && val >= 0) {
             cartes.get(val).takeDamage(1);
-        }else{
+        } else {
             plateau.getHeroCible().takeDamege(1);
         }
     }

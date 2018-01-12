@@ -23,8 +23,8 @@ public class VolDeVie extends AServiteurDecorator {
         aServiteur.use(plateau);
         AHero heroCurent = plateau.getHeroCurent();
         int vie = heroCurent.getVie();
-        vie+=getDegats();
-        if (vie>30) vie = 30;
+        vie += getDegats();
+        if (vie > 30) vie = 30;
         heroCurent.setVie(vie);
     }
 

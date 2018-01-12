@@ -11,8 +11,8 @@ import java.util.List;
  * Benediction de puissance
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class BenedictionDePuissance extends ASort {
 

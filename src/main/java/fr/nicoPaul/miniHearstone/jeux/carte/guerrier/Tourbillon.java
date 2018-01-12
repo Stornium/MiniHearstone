@@ -7,8 +7,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.ASort;
  * Tourbillon
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class Tourbillon extends ASort {
 
@@ -20,13 +20,13 @@ public class Tourbillon extends ASort {
     public void use(Plateau plateau) {
         plateau.getCartesOfHero(plateau.getJoueur1()).forEach(aServiteur -> {
             boolean dead = aServiteur.takeDamage(1);
-            if (dead){
+            if (dead) {
                 plateau.getCartesCible().remove(aServiteur);
             }
         });
         plateau.getCartesOfHero(plateau.getJoueur2()).forEach(aServiteur -> {
             boolean dead = aServiteur.takeDamage(1);
-            if (dead){
+            if (dead) {
                 plateau.getCartesCible().remove(aServiteur);
             }
         });

@@ -9,8 +9,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.effect.VolDeVie;
  * Champion frisselame
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class ChampionFrisselame extends AServiteur {
     public ChampionFrisselame() {

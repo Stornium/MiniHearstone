@@ -57,8 +57,8 @@ public class TourJ2 implements Etat {
             if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;
 
-            int choix =-1;
-            while (!action.equalsIgnoreCase("s")){//Choix de cart que si pas specialle
+            int choix = -1;
+            while (!action.equalsIgnoreCase("s")) {//Choix de cart que si pas specialle
                 System.out.println("choix de la carte.");
                 choix = Input.getIntInput("");
                 if (choix != -1)
@@ -77,7 +77,7 @@ public class TourJ2 implements Etat {
             if (action.equalsIgnoreCase("s") && spe) {
                 // si special dejat utilisé
                 System.out.println("! deja utiliser !");
-            } else if(action.equalsIgnoreCase("s") && !spe){
+            } else if (action.equalsIgnoreCase("s") && !spe) {
                 if (2 <= curentHero.getMana()) {
                     //si asser de mana
                     spe = true;

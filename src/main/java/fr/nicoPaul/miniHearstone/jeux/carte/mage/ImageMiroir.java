@@ -8,8 +8,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
  * Image miroir
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class ImageMiroir extends ASort {
 

@@ -42,7 +42,7 @@ public abstract class ADeck {
     /**
      * ajout de 10 carte dans le deck
      */
-    public void addDeck(){
+    public void addDeck() {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             int val = random.nextInt(8);
@@ -58,14 +58,15 @@ public abstract class ADeck {
 
     /**
      * predre un nombre de cartse du deck
+     *
      * @param nb nombre de cartes voulue
      *
      * @return une liste de ACarte
      */
-    public List<ACarte> getCartes(int nb){
+    public List<ACarte> getCartes(int nb) {
         ArrayList<ACarte> res = new ArrayList<>();
         Random random = new Random();
-        for (int i=0; i<nb; i++){
+        for (int i = 0; i < nb; i++) {
             int val = random.nextInt(cartes.size());
             res.add(cartes.remove(val));
             chekDeck();
@@ -78,7 +79,7 @@ public abstract class ADeck {
      *
      * @return une ACarte
      */
-    public ACarte getCart(){
+    public ACarte getCart() {
         ACarte res = null;
 
         Random random = new Random();
@@ -91,8 +92,8 @@ public abstract class ADeck {
     /**
      * si le deck a moin de 5 cartes on en recréer 10 autre
      */
-    public void chekDeck(){
-        if(cartes.size()<5){
+    public void chekDeck() {
+        if (cartes.size() < 5) {
             addDeck();
         }
     }

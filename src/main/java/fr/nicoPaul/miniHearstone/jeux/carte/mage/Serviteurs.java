@@ -6,10 +6,10 @@ import fr.nicoPaul.miniHearstone.jeux.carte.effect.Provocation;
 
 /**
  * Serviteurs
- * 
+ *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class Serviteurs extends AServiteur {
 

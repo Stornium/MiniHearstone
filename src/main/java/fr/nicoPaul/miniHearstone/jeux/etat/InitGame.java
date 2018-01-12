@@ -13,8 +13,8 @@ import java.util.Random;
  * debut de partie
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class InitGame implements Etat {
 
@@ -60,15 +60,14 @@ public class InitGame implements Etat {
         AHero joueur2 = plateau.getJoueur2();
 
 
-
         System.out.println("choix du joueur au hasard pour jouer en premier");
         Random rn = new Random();
         int val = rn.nextInt(2) + 1;
-        if(val==1){
+        if (val == 1) {
             joueur1.addMain(joueur1.getADeck().getCartes(2));//3-1 car carte tirer au debut de tour
             joueur2.addMain(joueur2.getADeck().getCartes(3));//4-1 car carte tirer au debut de tour
             plateau.changeEtatTourJ1();
-        }else{
+        } else {
             joueur2.addMain(joueur2.getADeck().getCartes(2));
             joueur1.addMain(joueur1.getADeck().getCartes(3));
             plateau.changeEtatTourJ2();
@@ -78,32 +77,34 @@ public class InitGame implements Etat {
 
     /**
      * le choix du hero a utiliser par le joueur
+     *
      * @param nom nom du joueur
+     *
      * @return le hero choisie
      */
-    private AHero choixHero(String nom){
+    private AHero choixHero(String nom) {
         boolean run = true;
         AHero hero = null;
-        while (run){
-            System.out.println("   1 => Mage\n"+
-                            "   2 => Paladin\n"+
-                            "   3 => Guerrier");
+        while (run) {
+            System.out.println("   1 => Mage\n" +
+                    "   2 => Paladin\n" +
+                    "   3 => Guerrier");
             int choix = Input.getIntInput("");
-            switch (choix){
+            switch (choix) {
                 case 1:
                     hero = new Mage(nom);
-                    run=false;
+                    run = false;
                     break;
                 case 2:
                     hero = new Paladin(nom);
-                    run=false;
+                    run = false;
                     break;
                 case 3:
                     hero = new Guerrier(nom);
-                    run=false;
+                    run = false;
                     break;
                 default:
-                    System.out.println(choix+": numero invalide");
+                    System.out.println(choix + ": numero invalide");
             }
         }
         return hero;

@@ -7,8 +7,8 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteurDecorator;
  * effet de cart
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class Provocation extends AServiteurDecorator {
 
@@ -18,9 +18,9 @@ public class Provocation extends AServiteurDecorator {
 
     @Override
     public boolean isEffet(Class<? extends AServiteurDecorator> aClass) {
-        if(this.getClass().equals(aClass)){
+        if (this.getClass().equals(aClass)) {
             return true;
-        }else{
+        } else {
             return aServiteur.isEffet(aClass);
         }
     }

@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class Plateau implements Observer {
 
@@ -46,7 +46,7 @@ public class Plateau implements Observer {
         tour();
     }
 
-    public void tour(){
+    public void tour() {
         etat.tour();
     }
 
@@ -55,31 +55,32 @@ public class Plateau implements Observer {
      *
      * @param AServiteur la carte à ajouter
      */
-    public void addCartesAtente(AServiteur AServiteur){
+    public void addCartesAtente(AServiteur AServiteur) {
         cartesAtente.add(AServiteur);
     }
 
     /**
-     *  supprimer une carte dans la liste des carte non jouable pour ce tour
+     * supprimer une carte dans la liste des carte non jouable pour ce tour
      *
      * @param AServiteur la carte à supprimer
      */
-    public void supCartesAtente(AServiteur AServiteur){
+    public void supCartesAtente(AServiteur AServiteur) {
         cartesAtente.remove(AServiteur);
     }
 
     /**
      * ajouter une carte au plateau
+     *
      * @param AServiteur la catre à ajouter
      */
-    public void addCartes(AServiteur AServiteur){
+    public void addCartes(AServiteur AServiteur) {
         cartes.get(etat.getCurentHero()).add(AServiteur);
     }
 
     /**
      * copier toute les catre en attente sur le plateau
      */
-    public void addAllCartesAtenteInCartes(){
+    public void addAllCartesAtenteInCartes() {
         cartes.get(etat.getCurentHero()).addAll(cartesAtente);
         cartesAtente.clear();
     }
@@ -92,16 +93,20 @@ public class Plateau implements Observer {
         return this.cartes.get(etat.getCurentHero());
     }
 
-    public List<AServiteur> getCartesCible(){
+    public List<AServiteur> getCartesCible() {
         return cartes.get(etat.getNotCurentHero());
     }
 
-    public AHero getHeroCurent(){
+    public AHero getHeroCurent() {
         return etat.getCurentHero();
     }
 
-    public AHero getHeroCible(){
+    public AHero getHeroCible() {
         return etat.getNotCurentHero();
+    }
+
+    public AHero getJoueur1() {
+        return joueur1;
     }
 
     //<editor-fold desc="get & set">
@@ -110,17 +115,13 @@ public class Plateau implements Observer {
         cartes.put(joueur1, new ArrayList<>());
     }
 
+    public AHero getJoueur2() {
+        return joueur2;
+    }
+
     public void setJoueur2(AHero joueur2) {
         this.joueur2 = joueur2;
         cartes.put(joueur2, new ArrayList<>());
-    }
-
-    public AHero getJoueur1() {
-        return joueur1;
-    }
-
-    public AHero getJoueur2() {
-        return joueur2;
     }
 
     public List<AServiteur> getServiteursJouer() {
@@ -134,22 +135,22 @@ public class Plateau implements Observer {
     //</editor-fold>
 
     //<editor-fold desc="change etat">
-    public void changeEtatTourJ1(){
+    public void changeEtatTourJ1() {
         etat = tourJ1;
     }
 
-    public void changeEtatTourJ2(){
+    public void changeEtatTourJ2() {
         etat = tourJ2;
     }
 
-    public void changeEtatFin(){
+    public void changeEtatFin() {
         etat = fin;
     }
     //</editor-fold>
 
     @Override
     public void actualiser(int vie) {
-        if (vie <=0){
+        if (vie <= 0) {
             win = etat.getCurentHero();
             changeEtatFin();
             tour();

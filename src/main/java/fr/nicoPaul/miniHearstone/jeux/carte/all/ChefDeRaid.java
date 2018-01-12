@@ -5,9 +5,10 @@ import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 
 /**
  * Chef de raid
+ *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public class ChefDeRaid extends AServiteur {
 
@@ -20,7 +21,7 @@ public class ChefDeRaid extends AServiteur {
     @Override
     public void place(Plateau plateau) {
         super.place(plateau);
-        this.plateau=plateau;
+        this.plateau = plateau;
         plateau.getCartesOfCurentHero().forEach(aServiteur -> aServiteur.addBoostDegat(1));
     }
 

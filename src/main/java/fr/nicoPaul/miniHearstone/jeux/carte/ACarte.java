@@ -6,8 +6,8 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
  * carte
  *
  * @author nicolas paul
- * @since 1
  * @version 1
+ * @since 1
  */
 public abstract class ACarte {
 
@@ -19,7 +19,7 @@ public abstract class ACarte {
         this.mana = mana;
     }
 
-    public ACarte init(){
+    public ACarte init() {
         return this;
     }
 
@@ -37,12 +37,14 @@ public abstract class ACarte {
 
     /**
      * quand la carte est placer
+     *
      * @param plateau le plateau
      */
     public abstract void place(Plateau plateau);
-    
+
     /**
      * quand la carte est utiliser
+     *
      * @param plateau le plateau
      */
     public abstract void use(Plateau plateau);
