@@ -22,7 +22,13 @@ public class InitGame implements Etat {
         this.plateau = plateau;
     }
 
+    @Override
     public AHero getCurentHero() {
+        return null;
+    }
+
+    @Override
+    public AHero getNotCurentHero() {
         return null;
     }
 
@@ -41,12 +47,19 @@ public class InitGame implements Etat {
         System.out.println("choix du joueur 2");
         plateau.setJoueur2(choixHero(nom));
 
+        AHero joueur1 = plateau.getJoueur1();
+        AHero joueur2 = plateau.getJoueur2();
+
         System.out.println("choix du joueur au hasard pour jouer en premier");
         Random rn = new Random();
         int val = rn.nextInt(2) + 1;
         if(val==1){
+            joueur1.addMain(joueur1.getADeck().getCartes(3));
+            joueur2.addMain(joueur2.getADeck().getCartes(4));
             plateau.changeEtatTourJ1();
         }else{
+            joueur2.addMain(joueur2.getADeck().getCartes(3));
+            joueur1.addMain(joueur1.getADeck().getCartes(4));
             plateau.changeEtatTourJ2();
         }
         plateau.tour();

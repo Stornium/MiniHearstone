@@ -10,5 +10,6 @@ import fr.nicoPaul.miniHearstone.jeux.hero.AHero;
 public interface Etat {
 
     AHero getCurentHero();
+    AHero getNotCurentHero();
     void tour();
 }

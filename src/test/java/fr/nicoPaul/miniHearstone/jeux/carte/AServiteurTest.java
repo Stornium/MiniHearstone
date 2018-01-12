@@ -1,5 +1,6 @@
 package fr.nicoPaul.miniHearstone.jeux.carte;
 
+import fr.nicoPaul.miniHearstone.jeux.carte.all.ChefDeRaid;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,27 +10,27 @@ import org.junit.Test;
  * @since 1
  * @version 1
  */
-public class ServiteurTest {
+public class AServiteurTest {
 
-    Serviteur serviteur;
+    AServiteur AServiteur;
 
     @Before
     public void setUp() throws Exception {
-        serviteur = new Serviteur("nom", 0, 0, 2);
+        AServiteur = new ChefDeRaid();
     }
 
     @Test
     public void serviteurGetDamageAndDead() throws Exception {
-        Assert.assertTrue(serviteur.takeDamage(2));
+        Assert.assertTrue(AServiteur.takeDamage(2));
     }
 
     @Test
     public void serviteurGetManyDamageAndDead() throws Exception {
-        Assert.assertTrue(serviteur.takeDamage(100));
+        Assert.assertTrue(AServiteur.takeDamage(100));
     }
 
     @Test
     public void serviteurGetDamageAndNotDead() throws Exception {
-        Assert.assertFalse(serviteur.takeDamage(1));
+        Assert.assertFalse(AServiteur.takeDamage(1));
     }
 }

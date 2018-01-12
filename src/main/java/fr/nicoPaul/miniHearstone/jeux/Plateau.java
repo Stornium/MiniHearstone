@@ -1,6 +1,6 @@
 package fr.nicoPaul.miniHearstone.jeux;
 
-import fr.nicoPaul.miniHearstone.jeux.carte.Serviteur;
+import fr.nicoPaul.miniHearstone.jeux.carte.AServiteur;
 import fr.nicoPaul.miniHearstone.jeux.etat.Etat;
 import fr.nicoPaul.miniHearstone.jeux.etat.InitGame;
 import fr.nicoPaul.miniHearstone.jeux.etat.TourJ1;
@@ -26,8 +26,10 @@ public class Plateau {
     private AHero joueur1;
     private AHero joueur2;
 
-    private HashMap<AHero, List<Serviteur>> cartes;
-    private List<Serviteur> cartesAtente;
+    private HashMap<AHero, List<AServiteur>> cartes;
+    private List<AServiteur> cartesAtente;
+
+    private List<AServiteur> serviteursJouer;
 
     public Plateau() {
         this.initGame = new InitGame(this);
@@ -35,8 +37,10 @@ public class Plateau {
         this.tourJ2 = new TourJ2(this);
         this.etat = this.initGame;
 
-        this.cartesAtente = new ArrayList<Serviteur>();
-        this.cartes = new HashMap<AHero, List<Serviteur>>();
+        this.cartesAtente = new ArrayList<AServiteur>();
+        this.cartes = new HashMap<AHero, List<AServiteur>>();
+
+        this.serviteursJouer = new ArrayList<>();
 
         tour();
     }
@@ -45,12 +49,16 @@ public class Plateau {
         etat.tour();
     }
 
-    public void addCartesAtente(Serviteur serviteur){
-        cartesAtente.add(serviteur);
+    public void addCartesAtente(AServiteur AServiteur){
+        cartesAtente.add(AServiteur);
     }
 
-    public void addCartes(Serviteur serviteur){
-        cartes.get(etat.getCurentHero()).add(serviteur);
+    public void supCartesAtente(AServiteur AServiteur){
+        cartesAtente.remove(AServiteur);
+    }
+
+    public void addCartes(AServiteur AServiteur){
+        cartes.get(etat.getCurentHero()).add(AServiteur);
     }
 
     public void addAllCartesAtenteInCartes(){
@@ -58,8 +66,24 @@ public class Plateau {
         cartesAtente.clear();
     }
 
-    public List<Serviteur> getCartesOfHero(AHero hero) {
+    public List<AServiteur> getCartesOfHero(AHero hero) {
         return this.cartes.get(hero);
+    }
+
+    public List<AServiteur> getCartesOfCurentHero() {
+        return this.cartes.get(etat.getCurentHero());
+    }
+
+    public List<AServiteur> getCartesCible(){
+        return cartes.get(etat.getNotCurentHero());
+    }
+
+    public AHero getHeroCurent(){
+        return etat.getCurentHero();
+    }
+
+    public AHero getHeroCible(){
+        return etat.getNotCurentHero();
     }
 
     //<editor-fold desc="get & set">
@@ -80,6 +104,11 @@ public class Plateau {
     public AHero getJoueur2() {
         return joueur2;
     }
+
+    public List<AServiteur> getServiteursJouer() {
+        return serviteursJouer;
+    }
+
     //</editor-fold>
 
     //<editor-fold desc="change etat">
