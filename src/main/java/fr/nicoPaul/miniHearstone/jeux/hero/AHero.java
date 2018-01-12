@@ -4,6 +4,7 @@ import fr.nicoPaul.miniHearstone.jeux.Plateau;
 import fr.nicoPaul.miniHearstone.jeux.carte.ACarte;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.ADeck;
 import fr.nicoPaul.miniHearstone.jeux.carte.deck.DeckFactory;
+import fr.nicoPaul.miniHearstone.jeux.observer.Sujet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * @version 1
  * @since 1
  */
-public abstract class AHero {
+public abstract class AHero implements Sujet {
 
     private String nom;
     private int vie;
