@@ -16,6 +16,7 @@ public class ImageMiroir extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-
+        plateau.addCartesAtente(new Serviteurs());
+        plateau.addCartesAtente(new Serviteurs());
     }
 }

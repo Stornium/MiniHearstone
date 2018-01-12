@@ -16,6 +16,7 @@ public class Tourbillon extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-
+        plateau.getCartesOfHero(plateau.getJoueur1()).forEach(aServiteur -> aServiteur.takeDamage(1));
+        plateau.getCartesOfHero(plateau.getJoueur2()).forEach(aServiteur -> aServiteur.takeDamage(1));
     }
 }

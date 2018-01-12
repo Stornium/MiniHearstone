@@ -16,6 +16,6 @@ public class ExplosionDesArcanes extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-
+        plateau.getCartesOfHero(plateau.getHeroCible()).forEach(aServiteur -> aServiteur.takeDamage(1));
     }
 }

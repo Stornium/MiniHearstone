@@ -16,6 +16,7 @@ public class MaitriseDuBlocage extends ASort {
 
     @Override
     public void use(Plateau plateau) {
-
+        plateau.getHeroCurent().addArmure(5);
+        plateau.getHeroCurent().deckToMain();
     }
 }

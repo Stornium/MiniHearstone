@@ -32,10 +32,23 @@ public abstract class AHero {
         this.main = new ArrayList<>();
     }
 
+    public void deckToMain(){
+        main.add(ADeck.getCart());
+    }
+
     public abstract void specialAction();
 
     public void takeDamege(int nb){
-        vie-=nb;
+        if(armure >= nb){
+            armure-=nb;
+        }else{
+            nb-=armure;
+            vie-=nb;
+        }
+    }
+
+    public void addArmure(int nb){
+        armure+=nb;
     }
 
     public void supMana(int nb){

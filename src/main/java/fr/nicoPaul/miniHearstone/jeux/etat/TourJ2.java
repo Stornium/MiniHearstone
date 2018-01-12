@@ -36,6 +36,7 @@ public class TourJ2 implements Etat {
     public void tour() {
         AHero curentHero = getCurentHero();
         curentHero.addMana();
+        curentHero.deckToMain();
         System.out.println("------------------------------------------");
         System.out.println("Au tour de " + curentHero.getNom() + "\n");
         System.out.println("Vie: " + curentHero.getVie() +
