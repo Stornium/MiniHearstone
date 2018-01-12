@@ -50,7 +50,7 @@ public class TourJ1 implements Etat {
 
             affiche(curentHero);
 
-            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main (-1 stop) | S => action special (-1 stop)");
+            System.out.println("choix de l'action: A => utiliser une carte | M => Placer une carte de la main | S => action special  (-1 stop)");
             String action = Input.getStringInput("");
             if (!action.equalsIgnoreCase("a") && !action.equalsIgnoreCase("m") && !action.equalsIgnoreCase("s"))
                 break;
@@ -77,7 +77,7 @@ public class TourJ1 implements Etat {
                 plateau.getHeroCurent().specialAction(plateau);
             } else if (choix < listCartes.size() && choix >= 0) {
                 ACarte aCarte = listCartes.get(choix);
-                if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement après m
+                if (action.equalsIgnoreCase("a")) {//seul des serviteurs passeront car les sorts sont utiliser imediatement apret m
                     if (plateau.getServiteursJouer().contains(aCarte)) {
                         System.out.println("! Carte deja utiliser !");
                     } else {
